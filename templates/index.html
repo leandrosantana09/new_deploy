@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>Search Page</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center">preveja o preço da sua futura goma</h1>
+
+    <div class="form">
+        <form action="/predict" method="POST">
+            <input type='longitude' name = 'longitude' id='longitude' placeholder = 'longitude'>
+            <input type='latitude' name = 'latitude' id='latitude' placeholder = 'latitude'>
+            <input type='housing_median_age' name = 'housing_median_age' id='housing_median_age' placeholder = 'housing_median_age'>
+            <input type='total_rooms' name = 'total_rooms' id='total_rooms' placeholder = 'total_rooms'>
+            <input type='total_bedrooms' name = 'total_bedrooms' id='total_bedrooms' placeholder = 'total_bedrooms'>
+            <input type='population' name = 'population' id='population' placeholder = 'population'>
+            <input type='households' name = 'households'id='households' placeholder = 'households'>
+            <input type='median_income' name = 'median_income' id='median_income' placeholder = 'median_income'>
+            <input type='ocean_proximity' name = 'ocean_proximity' id='ocean_proximity' placeholder = 'ocean_proximity'>
+</select>
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+</div>
+{% endblock %}
