@@ -11,6 +11,10 @@ pipeline = joblib.load(filename='pipeline.pkl')
 # instanciate flask
 app = Flask(__name__)
 
+# route to display the home page
+@app.route('/boot') 
+def home():
+    return render_template("base_boot.html")
 
 # route to display the home page
 @app.route('/', methods=['GET']) 
@@ -50,7 +54,7 @@ def predict():
             # predict
             pred = model.predict(data_train)
             print(pred)
-            return render_template('results.html', pred=pred[0])
+            return render_template('results.html', pred=round(pred[0], 2))
         except Exception as e:
             print('The Exception message is: ',e)
             return 'something is wrong'
@@ -63,3 +67,6 @@ if __name__ == '__main__':
     # start flask
     port = os.environ.get('PORT', 5000)
     app.run(host='0.0.0.0', port=port)
+    
+    
+    #<input type="submit" value="Predict">

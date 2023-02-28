@@ -5,25 +5,22 @@
   <meta charset="UTF-8">
   <title>Review Page</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-
-
-      <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
 
 </head>
 
 <body>
-
-  <div class="table-users">
-   <div class="header">Prediction</div>
-
-      <p>A previsão de preço para sua futura goma é $ {{pred}}!</p>
-</div>
-
-
-
+   <div class="container">
+   <div style="text-align:center">
+   <h1 style="text-align: center">PREVISÕES</h1>
+   <h1 style="text-align: center">A previsão de preço para sua futura goma é R$ {{pred}}!</h1>
+   <body>
+    <img src="static/house.png" 
+     width="500" 
+     height="500" />
+   </body>
+   </div>
+   </div>
+<script src="{{ url_for("static", filename='js/bootstrap.min.js') }}"></script>
 </body>
-
 </html>
