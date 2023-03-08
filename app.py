@@ -1,12 +1,13 @@
-import joblib
+# imports
 import os
 import pandas as pd
+import joblib
 from flask import Flask, render_template, request
 
 
 # load model
-model = joblib.load(filename='final_model.pkl')
-pipeline = joblib.load(filename='pipeline.pkl')
+model = joblib.load(filename='models/final_model.pkl')
+pipeline = joblib.load(filename='models/pipeline.pkl')
 
 # instanciate flask
 app = Flask(__name__)
@@ -69,4 +70,3 @@ if __name__ == '__main__':
     app.run(host='0.0.0.0', port=port)
     
     
-    #<input type="submit" value="Predict">
