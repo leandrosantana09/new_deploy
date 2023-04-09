@@ -2,11 +2,12 @@ import joblib
 import os
 import pandas as pd
 from flask import Flask, render_template, request
+from models.info_apoio import CombinedAttributesAdder
 
 
 # load model
-model = joblib.load(filename='final_model.pkl')
-pipeline = joblib.load(filename='pipeline.pkl')
+model = joblib.load(filename='models/final_model.pkl')
+pipeline = joblib.load(filename='models/pipeline.pkl')
 
 # instanciate flask
 app = Flask(__name__)
@@ -49,10 +50,10 @@ def predict():
             df_row = pd.DataFrame([data])
             
             # data preparation
-            data_train = pipeline.transform(df_row)
-            
+            data_final = pipeline.transform(df_row)
+                 
             # predict
-            pred = model.predict(data_train)
+            pred = model.predict(data_final)
             print(pred)
             return render_template('results.html', pred=round(pred[0], 2))
         except Exception as e:
