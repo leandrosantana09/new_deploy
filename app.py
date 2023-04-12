@@ -1,9 +1,36 @@
 import joblib
 import os
 import pandas as pd
+import numpy as np
 from flask import Flask, render_template, request
+from sklearn.base import BaseEstimator, TransformerMixin
 from info_apoio import CombinedAttributesAdder
 
+class CombinedAttributesAdder(BaseEstimator, TransformerMixin):
+ 
+
+    '''Classe responsavel por add atributos'''
+            
+    def __init__(self, add_badrooms_per_room=True):
+        
+        self.add_badrooms_per_room = add_badrooms_per_room
+        
+    def fit(self, X, y=None):
+        
+        return self
+    
+    def transform(self, X, y=None):
+        
+        rooms_ix, bedrooms_ix, population_ix, households_ix = 3, 4, 5, 6
+        
+        room_per_household = X[:, rooms_ix]/X[:, households_ix]
+        population_per_household = X[:, population_ix] / X[:, households_ix]
+        if self.add_badrooms_per_room:
+            bedrooms_per_room = X[:, bedrooms_ix] / X[:, rooms_ix]
+            return np.c_[X, room_per_household, population_per_household, bedrooms_per_room]
+        
+        else:
+            return np.c_[X, room_per_household, population_per_household]
 
 # load model
 model = joblib.load(filename='models/final_model.pkl')
