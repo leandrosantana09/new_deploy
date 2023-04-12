@@ -2,11 +2,10 @@ import numpy as np
 from sklearn.base import BaseEstimator, TransformerMixin
 
 
-rooms_ix, bedrooms_ix, population_ix, households_ix = 3, 4, 5, 6
 
 class CombinedAttributesAdder(BaseEstimator, TransformerMixin):
-    
-    
+ 
+
     '''Classe responsavel por add atributos'''
             
     def __init__(self, add_badrooms_per_room=True):
@@ -18,6 +17,8 @@ class CombinedAttributesAdder(BaseEstimator, TransformerMixin):
         return self
     
     def transform(self, X, y=None):
+        
+        rooms_ix, bedrooms_ix, population_ix, households_ix = 3, 4, 5, 6
         
         room_per_household = X[:, rooms_ix]/X[:, households_ix]
         population_per_household = X[:, population_ix] / X[:, households_ix]
