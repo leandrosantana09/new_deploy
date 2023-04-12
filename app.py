@@ -33,8 +33,8 @@ class CombinedAttributesAdder(BaseEstimator, TransformerMixin):
             return np.c_[X, room_per_household, population_per_household]
 
 # load model
-model = joblib.load(filename='models/final_model.pkl')
-pipeline = joblib.load(filename='models/pipeline.pkl')
+model = joblib.load(filename='final_model.pkl')
+pipeline = joblib.load(filename='pipeline.pkl')
 
 # instanciate flask
 app = Flask(__name__)
