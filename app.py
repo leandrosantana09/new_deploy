@@ -2,7 +2,7 @@ import joblib
 import os
 import pandas as pd
 from flask import Flask, render_template, request
-from models.info_apoio import CombinedAttributesAdder
+from info_apoio import CombinedAttributesAdder
 
 
 # load model
