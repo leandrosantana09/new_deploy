@@ -18,9 +18,11 @@ Este repositório tem como objetivo criar uma aplicação web com flask e railwa
     height="330"
     />
 
+Link da aplicação => https://newdeploy-production.up.railway.app/ 
 
-Link da aplicação => https://newdeploy-production-4cd1.up.railway.app/predict   
+# Executando aplicação no terminal
 
+ $ python app.py
 
 # Explicação dos arquivos:
 
