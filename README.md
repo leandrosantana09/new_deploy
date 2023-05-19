@@ -1,38 +1,57 @@
-# Objetivo do repositorio
+# Objetivo do repositório
 
+Este repositório tem como objetivo criar uma aplicação web com flask e railway com um modelo simples de aprendizado de máquina.
+
+
+
+## Uma prévia do aplicativo
+
+### Interface inicial
 <img src="static/predict_app.png" 
-    width="500" 
-    height="500"
+    width="625" 
+    height="330"
     />
 
+### Interface de resultados
+<img src="static/results_app.png" 
+    width="625" 
+    height="330"
+    />
+
+Link da aplicação => https://newdeploy-production.up.railway.app/ 
+
+# Executando aplicação no terminal
+
+ $ python app.py
 
 # Explicação dos arquivos:
 
--'app.py' - Arquivo principal de execução do app flask.
--'info_apoio.py' - Funções auxiliares.
--'Procfile' - Arquivo responsavel pela deploy do modelo.
--'requirements.txt'- Requisitos responsaveis pela instalação do repositorio
+- 'app.py' - Arquivo principal de execução do app flask.
+- 'info_apoio.py' - Funções auxiliares.
+- 'Procfile' - Arquivo responsável pela deploy do modelo.
+- 'requirements.txt'- Requisitos responsáveis pela instalação do repositório.
 
 Pastas:
--'models/' - 'Arquivos .pkl'
--'static/' - 'Arquivos de interface front-end'
--'templetes/' - 'Arquivos .html'
 
-# Ferramentas ultilizadas
+- 'models/' - 'Arquivos .pkl'
+- 'static/' - 'Arquivos de interface front-end'
+- 'templetes/' - 'Arquivos .html'
+
+# Ferramentas utilizadas
 
 - Python 3.7.9 - (https://www.python.org/downloads/release/python-379/)
 - Bootstrap - (https://getbootstrap.com/)
+- Railway - (https://railway.app/)
 - HTML 5
-- Java
+- JavaScript
 
-# Principais bibliotecas ultilizadas (Python 3.7.9)
+# Principais bibliotecas utilizadas (Python 3.7.9)
 
 - os (interna)
 - joblib (https://joblib.readthedocs.io/)
 - pandas (https://pandas.pydata.org/)
 - numpy (https://numpy.org/)
-- Flask (https://flask.palletsprojects.com/)
-
+- flask (https://flask.palletsprojects.com/)
 
 # CONTATO PROFISSIONAL
 
